@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Validate form inputs
     const validationErrors = {};
     if (!email) {
@@ -35,29 +36,38 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleInputChange}
-        />
-        {errors.email && <span>{errors.email}</span>}
+    <div className="login-container bg-dark">
+      <div className="login-form">
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+              className="input-field"
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={email}
+              onChange={handleInputChange}
+            />
+            {errors.email && <span className="error-message">{errors.email}</span>}
+          </div>
+          <div className="form-group">
+            <input
+              className="input-field"
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={password}
+              onChange={handleInputChange}
+            />
+            {errors.password && <span className="error-message">{errors.password}</span>}
+          </div>
+          <button type="submit" className="login-button">Login</button>
+        </form>
+        <div className="forgot-password">
+          <a href="#">Forgot password?</a>
+        </div>
       </div>
-      <div>
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleInputChange}
-        />
-        {errors.password && <span>{errors.password}</span>}
-      </div>
-      <button type="submit">Login</button>
-    </form>
+    </div>
   );
 };
 
