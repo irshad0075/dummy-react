@@ -4,7 +4,6 @@ import { Container, Row, Col } from "reactstrap";
 import { Link } from 'react-router-dom';
 import imageslide from "../slide-2.png";
 
-
 const WhyChooseUs = () => {
   return (
     <section className="join-us">

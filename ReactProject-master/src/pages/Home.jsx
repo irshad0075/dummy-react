@@ -14,9 +14,10 @@ function Home() {
  
       <Carouselstart />
       <AboutSection />
-      <WhyChooseUs />
+      <WhyUs />
       <CategorySection />
-     <WhyUs />
+      <WhyChooseUs />
+     
     
       {/* <Services /> */}
     </>

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 function NavigationBar() {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary" >
+         <Navbar expand="lg" className="bg-white">
                 <Container fluid>
                     <Navbar.Brand href="#">
                         <img src={image11} width="90px" height="60px" className="d-inline-block align-top mx-3" alt="logo" />
