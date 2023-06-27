@@ -1,7 +1,7 @@
 import React from 'react'
 import Carouselstart from '../components/Carouselstart'
 import AboutSection from '../components/AboutSection'
-import WhyChooseUs from '../components/WhyChooseUs'
+
 import CategorySection from '../components/CategorySection'
 import WhyUs from '../components/WhyUs'
 
@@ -16,7 +16,7 @@ function Home() {
       <AboutSection />
       <WhyUs />
       <CategorySection />
-      <WhyChooseUs />
+      
      
     
       {/* <Services /> */}

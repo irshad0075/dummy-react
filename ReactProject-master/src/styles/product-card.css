@@ -1,0 +1,45 @@
+.container {
+  padding-top: 40px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.my-5 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.rating {
+  margin-bottom: 20px;
+}
+
+.quantity {
+  margin-bottom: 20px;
+}
+
+.review-title {
+  margin-bottom: 30px;
+}
+
+.review-form {
+  margin-top: 30px;
+}
+
+.rating-section {
+  margin-top: 20px;
+}
+
+.rating-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

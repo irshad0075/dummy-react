@@ -1,0 +1,39 @@
+.product-slider {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+  
+  .product-card-container {
+    margin: 0 10px;
+  }
+  
+  .product-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .product-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .product-card .card-title {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .product-card .card-text {
+    margin-top: 5px;
+  }
+  
+  .product-card .text-danger {
+    margin-top: auto;
+  }
+  
+  .product-card .btn-danger {
+    margin-top: 10px;
+  }
+  

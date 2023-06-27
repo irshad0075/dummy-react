@@ -2,43 +2,75 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import '../styles/ProductSlider.css';
 
 export default function CategoryPage() {
   const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://dummyjson.com/products/category/${categoryName}`).then(json => setProducts(json.data.products));
+    axios
+      .get(`https://dummyjson.com/products/category/${categoryName}`)
+      .then((json) => setProducts(json.data.products));
   }, [categoryName]);
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <div className="container">
       <div className="my-6 text-center text-white">
         <h1>{categoryName.toUpperCase()}</h1>
         <p className="text-white">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, officia nihil! Nemo sunt reprehenderit voluptates amet itaque libero in unde, molestias illo veniam, dolore veritatis eaque ipsum. Molestiae, nam architecto!
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, officia nihil! Nemo sunt reprehenderit
+          voluptates amet itaque libero in unde, molestias illo veniam, dolore veritatis eaque ipsum. Molestiae, nam
+          architecto!
         </p>
       </div>
 
-      <div className="row">
+      <Slider {...sliderSettings} className="product-slider">
         {products.map((val, key) => (
-          <div className="col-md-4 my-4" key={key}>
+          <div className="product-card-container" key={key}>
             <Link className="text-decoration-none text-danger" to={`/products/${val.id}`}>
-              <Card className="h-100 d-flex flex-column">
-                <Card.Img variant="top" src={val.thumbnail} className="flex-grow-1" />
-                <Card.Body className="d-flex flex-column">
+              <Card className="product-card text-white" style={{ backgroundColor: 'maroon' }}>
+                <Card.Img variant="top" src={val.thumbnail} />
+                <Card.Body>
                   <Card.Title>{val.title}</Card.Title>
                   <Card.Text>{val.description}</Card.Text>
                   <div className="mt-auto">
-                    <div className="text-danger fw-bold">₹ {val.price}</div>
-                    <button className="btn btn-danger">Add to Cart</button>
+                    <div className="text-dark fw-bold">₹ {val.price}</div>
+                    <button className="btn btn-dark">Add to Cart</button>
                   </div>
                 </Card.Body>
               </Card>
             </Link>
           </div>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 }
