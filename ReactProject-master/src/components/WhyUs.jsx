@@ -1,16 +1,17 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import imageslide from "../slide-1.png";
+import imageslide from "../aboutus.gif";
+
 const WhyUs = () => {
     return (
-      <section style={{ background: 'linear-gradient(180deg, #f2f6fa 0%, #fff 100%)' }}>
+      <section style={{ background: '#e1997e' }}>
         <Container id="about" className="pb-5">
           <Row className="d-flex pt-5">
             <Col md={6}>
             <img src={imageslide} alt="" className="w-90" />
             </Col>
             <Col md={6}>
-              <h2 style={{ color: '#203e59' }} data-aos="fade-zoom-in">Why You Choose Us?</h2>
+              <h2 style={{ color: 'white' }} data-aos="fade-zoom-in">Why You Choose Us?</h2>
               <p data-aos="fade-zoom-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit</p>
   
               <Row>
@@ -18,7 +19,7 @@ const WhyUs = () => {
                   <Card>
                     <Card.Body>
                       <div className="card-text">
-                        <h5 style={{ color: '#203e59' }}>Corporis voluptates sit</h5>
+                        <h5 style={{ color: '#e1997e' }}>Corporis voluptates sit</h5>
                         <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                       </div>
                     </Card.Body>
@@ -28,7 +29,7 @@ const WhyUs = () => {
                   <Card>
                     <Card.Body>
                       <div className="card-text">
-                        <h5 style={{ color: '#203e59' }}>Corporis voluptates sit</h5>
+                        <h5 style={{ color: '#e1997e' }}>Corporis voluptates sit</h5>
                         <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                       </div>
                     </Card.Body>
@@ -40,7 +41,7 @@ const WhyUs = () => {
                   <Card>
                     <Card.Body>
                       <div className="card-text">
-                        <h5 style={{ color: '#203e59' }}>Corporis voluptates sit</h5>
+                        <h5 style={{ color: '#e1997e' }}>Corporis voluptates sit</h5>
                         <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                       </div>
                     </Card.Body>
@@ -50,7 +51,7 @@ const WhyUs = () => {
                   <Card>
                     <Card.Body>
                       <div className="card-text">
-                        <h5 style={{ color: '#203e59' }}>Corporis voluptates sit</h5>
+                        <h5 style={{ color: '#e1997e' }}>Corporis voluptates sit</h5>
                         <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
                       </div>
                     </Card.Body>

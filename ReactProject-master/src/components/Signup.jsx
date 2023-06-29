@@ -1,63 +1,128 @@
-// import React from 'react';
-// import {
-//   MDBBtn,
-//   MDBContainer,
-//   MDBRow,
-//   MDBCol,
-//   MDBCard,
-//   MDBCardBody,
-//   MDBInput,
-//   MDBIcon
-// }
-// from 'mdb-react-ui-kit';
+import React, { useState } from "react";
+import { Form, Row, Col, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Swal from "sweetalert2";
 
-// function Signup() {
-//   return (
-//     <MDBContainer fluid>
+function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+  });
 
-//       <MDBRow className='d-flex justify-content-center align-items-center h-100'>
-//         <MDBCol col='12'>
+  const { email, password, address1, address2, city, state, zip } = formData;
 
-//           <MDBCard className='bg-dark text-white my-5 mx-auto' style={{borderRadius: '1rem', maxWidth: '400px'}}>
-//             <MDBCardBody className='p-5 d-flex flex-column align-items-center mx-auto w-100'>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(formData);
+    Swal.fire({
+      icon: "success",
+      title: "Form Submitted",
+      text: "Data has been logged in the console.",
+    });
+  };
 
-//               <h2 className="fw-bold mb-2 text-uppercase">Login</h2>
-//               <p className="text-white-50 mb-5">Please enter your login and password!</p>
+  return (
+    <>
+      <style>
+        {`
+          body {
+            overflow: hidden;
+          }
+        `}
+      </style>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <div
+          className="modal-right p-4 m-2"
+          style={{ height: "500px", width: "400px" }}
+    >
+          <img
+            src="https://img.freepik.com/free-vector/sign-concept-illustration_114360-125.jpg?w=2000"
+            alt="img"
+            style={{ height: "500px", width: "95%" }}
+          />
+        </div>
+        <div style={{ width: "900px" }}>
+          <Form
+            className="d-flex flex-column"
+            style={{ height: "500px", border: "rounded" }}
+            onSubmit={handleSubmit}
+          >
+            <Row className="mb-3">
+              <Form.Group as={Col} controlId="formGridEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" />
+              </Form.Group>
 
-//               <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' label='Email address' id='formControlLg' type='email' size="lg"/>
-//               <MDBInput wrapperClass='mb-4 mx-5 w-100' labelClass='text-white' label='Password' id='formControlLg' type='password' size="lg"/>
+              <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+            </Row>
 
-//               <p className="small mb-3 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
-//               <MDBBtn outline className='mx-2 px-5' color='white' size='lg'>
-//                 Login
-//               </MDBBtn>
+            <Form.Group className="mb-3" controlId="formGridAddress1">
+              <Form.Label>Address</Form.Label>
+              <Form.Control placeholder="1234 Main St" />
+            </Form.Group>
 
-//               <div className='d-flex flex-row mt-3 mb-5'>
-//                 <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-//                   <MDBIcon fab icon='facebook-f' size="lg"/>
-//                 </MDBBtn>
+            <Form.Group className="mb-3" controlId="formGridAddress2">
+              <Form.Label>Address 2</Form.Label>
+              <Form.Control placeholder="Apartment, studio, or floor" />
+            </Form.Group>
 
-//                 <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-//                   <MDBIcon fab icon='twitter' size="lg"/>
-//                 </MDBBtn>
+            <Row className="mb-3">
+              <Form.Group as={Col} controlId="formGridCity">
+                <Form.Label>City</Form.Label>
+                <Form.Control />
+              </Form.Group>
 
-//                 <MDBBtn tag='a' color='none' className='m-3' style={{ color: 'white' }}>
-//                   <MDBIcon fab icon='google' size="lg"/>
-//                 </MDBBtn>
-//               </div>
+              <Form.Group as={Col} controlId="formGridState">
+                <Form.Label>State</Form.Label>
+                <Form.Select defaultValue="Choose...">
+                  <option>Choose...</option>
+                  <option>California (United States)</option>
+                  <option>New York (United States)</option>
+                  <option>Texas (United States)</option>
+                  <option>London (United Kingdom)</option>
+                  <option>Paris (France)</option>
+                  <option>Berlin (Germany)</option>
+                  <option>Beijing (China)</option>
+                </Form.Select>
+              </Form.Group>
 
-//               <div>
-//                 <p className="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a></p>
+              <Form.Group as={Col} controlId="formGridZip">
+                <Form.Label>Zip</Form.Label>
+                <Form.Control />
+              </Form.Group>
+            </Row>
 
-//               </div>
-//             </MDBCardBody>
-//           </MDBCard>
+            <Form.Group className="mb-3" id="formGridCheckbox">
+              <Form.Check type="checkbox" label="Check me out" />
+            </Form.Group>
 
-//         </MDBCol>
-//       </MDBRow>
+            <Button variant="danger" type="submit">
+              Submit
+            </Button>
+          </Form>
 
-//     </MDBContainer>
-//   );
-// }
+          <p className="sign-up">
+            Already have an account? <a href="#">Sign In now</a>
+          </p>
+        </div>
+      </div>
+    </>
+  );
+}
 
-// export default Signup;
+export default Login;

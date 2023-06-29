@@ -2,6 +2,7 @@
     border: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    border: 2px solid #e1997e;
   }
   
   .card:hover {
@@ -40,7 +41,7 @@
   }
   
   .bg-danger {
-    background-color: #ff4d4f;
+    border: 2px solid #e1997e;
   }
   
   .bg-danger:hover {

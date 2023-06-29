@@ -7,6 +7,26 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import '../styles/ProductSlider.css';
 
+// CustomPrevArrow component
+const CustomPrevArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <span className="arrow left-arrow" />
+    </div>
+  );
+};
+
+// CustomNextArrow component
+const CustomNextArrow = (props) => {
+  const { className, onClick } = props;
+  return (
+    <div className={className} onClick={onClick}>
+      <span className="arrow right-arrow" />
+    </div>
+  );
+};
+
 export default function CategoryPage() {
   const { categoryName } = useParams();
   const [products, setProducts] = useState([]);
@@ -39,13 +59,15 @@ export default function CategoryPage() {
         },
       },
     ],
+    prevArrow: <CustomPrevArrow />,
+    nextArrow: <CustomNextArrow />,
   };
 
   return (
     <div className="container">
-      <div className="my-6 text-center text-white">
+      <div className="my-6 text-center text-dark">
         <h1>{categoryName.toUpperCase()}</h1>
-        <p className="text-white">
+        <p className="text-danger">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, officia nihil! Nemo sunt reprehenderit
           voluptates amet itaque libero in unde, molestias illo veniam, dolore veritatis eaque ipsum. Molestiae, nam
           architecto!
@@ -56,7 +78,7 @@ export default function CategoryPage() {
         {products.map((val, key) => (
           <div className="product-card-container" key={key}>
             <Link className="text-decoration-none text-danger" to={`/products/${val.id}`}>
-              <Card className="product-card text-white" style={{ backgroundColor: 'maroon' }}>
+              <Card className="product-card text-dark" style={{ backgroundColor: '#e1997e' }}>
                 <Card.Img variant="top" src={val.thumbnail} />
                 <Card.Body>
                   <Card.Title>{val.title}</Card.Title>

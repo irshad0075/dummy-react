@@ -4,6 +4,8 @@ import AboutSection from '../components/AboutSection'
 
 import CategorySection from '../components/CategorySection'
 import WhyUs from '../components/WhyUs'
+import BestSellerSection from '../components/BestSellerSection'
+// import TopSale from '../components/TopSale'
 
 
 // import Services from '../components/Services'
@@ -15,8 +17,11 @@ function Home() {
       <Carouselstart />
       <AboutSection />
       <WhyUs />
-      <CategorySection />
-      
+      {/* <CategorySection /> */}
+      <BestSellerSection/>
+    
+      {/* <TopSale/> */}
+
      
     
       {/* <Services /> */}
