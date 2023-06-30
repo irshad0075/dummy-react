@@ -1,19 +1,19 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import imageslide from "../aboutus.gif";
+import imageslide from "../Imac.gif";
 
 const WhyUs = () => {
-    return (
-      <section style={{ background: '#e1997e' }}>
-        <Container id="about" className="pb-5">
-          <Row className="d-flex pt-5">
-            <Col md={6}>
-            <img src={imageslide} alt="" className="w-90" />
-            </Col>
-            <Col md={6}>
-              <h2 style={{ color: 'white' }} data-aos="fade-zoom-in">Why You Choose Us?</h2>
+  return (
+    <section style={{ background: '#e1997e' }}>
+      <Container id="about" className="pb-5">
+        <Row className="d-flex pt-5">
+          <Col md={6} className="d-flex align-items-center justify-content-center">
+            <img src={imageslide} alt="" className="w-75" />
+          </Col>
+          <Col md={6}>
+            <div className="px-md-4">
+              <h2 style={{ color: 'white' }} data-aos="fade-zoom-in">Why Choose Us?</h2>
               <p data-aos="fade-zoom-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit</p>
-  
               <Row>
                 <Col sm={6} mb={3} mb-sm={0} data-aos="fade-up">
                   <Card>
@@ -58,11 +58,12 @@ const WhyUs = () => {
                   </Card>
                 </Col>
               </Row>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-    );
-  };
-  export default WhyUs;
-  
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+  );
+};
+
+export default WhyUs;

@@ -2,33 +2,42 @@ import React, { useState, useEffect } from "react";
 import "../styles/cardStyle.css";
 import "../styles/best-seller.css";
 import Card from "react-bootstrap/Card";
-import Carousel from "react-bootstrap/Carousel";
+import { Link } from "react-router-dom";
+import axios from "axios";
+
 import imageslide1 from "../1.jpg";
 import imageslide2 from "../2.jpg";
 import imageslide3 from "../3.jpg";
 import imageslide4 from "../4.jpg";
 import imageslide5 from "../5.jpg";
-import { Link } from "react-router-dom";
+
 import image1 from "../m1.jpg";
 import image2 from "../m2.jpg";
 import image3 from "../m3.jpg";
 import image4 from "../m4.jpg";
 import image5 from "../m5.jpg";
-import axios from "axios";
+import image6 from "../m6.jpg";
 
 const BestSellerSection = () => {
   const [categories, setCategories] = useState([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [mainImage, setMainImage] = useState(image1 , image2 ,image3);
-  const [card1Image, setCard1Image] = useState(image4 ,image5 ,image4);
+  const [mainImage, setMainImage] = useState(image1);
+  const [card1Image, setCard1Image] = useState(image4);
 
+  const images = [
+    imageslide1,
+    imageslide2,
+    imageslide3,
+    imageslide4,
+    imageslide5,
+  ];
 
-  const images = [imageslide1, imageslide2, imageslide3, imageslide4, imageslide5];
-
-  const handleThumbnailClick = (image) => {
-    setMainImage,setCard1Image(image);
+  const handleThumbnailClick = (image, cardNumber) => {
+    if (cardNumber === 1) {
+      setMainImage(image);
+    } else if (cardNumber === 2) {
+      setCard1Image(image);
+    }
   };
-  
 
   useEffect(() => {
     axios
@@ -36,21 +45,14 @@ const BestSellerSection = () => {
       .then((json) => setCategories(json.data));
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide === images.length - 1 ? 0 : prevSlide + 1
-      );
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+
 
   return (
     <div className="containers my-4">
       <div className="title">
-        <p>Best Seller</p>
+        <p>Best Sale</p>
         <h2>
-          Tattoo <span>Designs</span>
+          Top <span>Catagories</span>
         </h2>
       </div>
       <div className="row">
@@ -64,7 +66,7 @@ const BestSellerSection = () => {
                 className="text-decoration-none"
                 to={`/products/category/${val}`}
               >
-                <Card className="h-100 text-dark">
+                <Card className="h-100 text-dark" style={{ border: "2px solid #e1997e" }}>
                   <Card.Body>
                     <Card.Title>
                       {key + 1} - {val.toUpperCase().replace("-", " ")}
@@ -76,28 +78,26 @@ const BestSellerSection = () => {
           ))}
         </div>
 
-      
-
-<div className="col-md-4 my-4">
-          <div className="card">
+        <div className="col-md-4 my-4">
+          <div className="card" style={{ border: "2px solid #e1997e" }}>
             <div className="card-main">
               <div className="discount">-10%</div>
               <div className="product-container">
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(mainImage)}
+                  onClick={() => handleThumbnailClick(image2, 1)}
                 >
-                  <img src={mainImage} alt="Product" />
+                  <img src={image2} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image3)}
+                  onClick={() => handleThumbnailClick(image3, 1)}
                 >
                   <img src={image3} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image1)}
+                  onClick={() => handleThumbnailClick(image1, 1)}
                 >
                   <img src={image1} alt="Product" />
                 </div>
@@ -108,37 +108,37 @@ const BestSellerSection = () => {
               <div className="cart-line"></div>
             </div>
             <div className="content">
-              <a href="javascript:void(0);">Incidid Tongue Bar</a>
+              <a>Top Brand</a>
               <p>
                 <span className="money">$81.00</span>
-                <span className="price-old">$89.00</span>
+                <span className="price-old ">$89.00</span>
               </p>
             </div>
           </div>
         </div>
 
         <div className="col-md-4 my-4">
-          <div className="card">
+          <div className="card" style={{ border: "2px solid #e1997e" }}>
             <div className="card-main">
-              <div className="discount">-10%</div>
+              <div className="discount">-20%</div>
               <div className="product-container">
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(card3Image)}
+                  onClick={() => handleThumbnailClick(image6, 2)}
                 >
-                  <img src={card1Image} alt="Product" />
+                  <img src={image6} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image4)}
+                  onClick={() => handleThumbnailClick(image4, 2)}
                 >
-                  <img src={image3} alt="Product" />
+                  <img src={image4} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image5)}
+                  onClick={() => handleThumbnailClick(image5, 2)}
                 >
-                  <img src={image1} alt="Product" />
+                  <img src={image5} alt="Product" />
                 </div>
               </div>
               <div className="image">
@@ -147,7 +147,7 @@ const BestSellerSection = () => {
               <div className="cart-line"></div>
             </div>
             <div className="content">
-              <a href="javascript:void(0);">Incidid Tongue Bar</a>
+              <a>Top Brand</a>
               <p>
                 <span className="money">$81.00</span>
                 <span className="price-old">$89.00</span>

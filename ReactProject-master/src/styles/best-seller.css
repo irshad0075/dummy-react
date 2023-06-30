@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .bg-color {
-    background: #eee;
+    background: white;
     padding: 60px 0;
     font-family: 'Roboto', sans-serif;
 }
@@ -63,7 +63,7 @@
 }
 
 .title span {
-    color: #fa0;
+    color: #e1997e;
 }
 
 .card {
@@ -77,7 +77,7 @@
 }
 
 .discount {
-    background: #fa0;
+    background:#e1997e;
     z-index: 3;
     position: relative;
     font-weight: 700;
@@ -95,7 +95,7 @@
 }
 
 .discount::after {
-    border-top: 6px solid #c80;
+    border-top: 6px solid #e1997e;
     content: '';
     position: absolute;
     left: 0;
@@ -115,11 +115,6 @@
     line-height: 100%;
     color: #fff;
     border-radius: 3px;
-}
-
-.label-green {
-    padding: 5px 8px;
-    background-color: #5cb85c;
 }
 
 .image img {
@@ -173,7 +168,7 @@
 }
 
 .cart-item ul li a:hover {
-    color: #fa0;
+    color: #e1997e;
 }
 
 .product-container {
@@ -227,7 +222,7 @@
 }
 
 .content a:hover {
-    color: #fa0;
+    color: #e1997e;
     text-decoration: none;
 }
 
@@ -237,7 +232,7 @@
 
 .content .money {
     font-size: 20px;
-    color: #fa0;
+    color: #e1997e;
     font-weight: 700;
     font-style: italic;
     margin-right: 6px;
@@ -253,7 +248,7 @@
 }
 
 .rating i {
-    color: #fa0;
+    color: #e1997e;
     line-height: 22px;
     margin: 0 2px;
     font-size: 12px;

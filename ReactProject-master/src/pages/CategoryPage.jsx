@@ -78,14 +78,14 @@ export default function CategoryPage() {
         {products.map((val, key) => (
           <div className="product-card-container" key={key}>
             <Link className="text-decoration-none text-danger" to={`/products/${val.id}`}>
-              <Card className="product-card text-dark" style={{ backgroundColor: '#e1997e' }}>
+              <Card className="product-card text-dark" style={{ backgroundColor: 'white', border: '2px solid #e1997e', height: '100%' }}>
                 <Card.Img variant="top" src={val.thumbnail} />
-                <Card.Body>
+                <Card.Body className="d-flex flex-column h-100">
                   <Card.Title>{val.title}</Card.Title>
                   <Card.Text>{val.description}</Card.Text>
                   <div className="mt-auto">
                     <div className="text-dark fw-bold">₹ {val.price}</div>
-                    <button className="btn btn-dark">Add to Cart</button>
+                    <button className="btn" style={{ background: '#e1997e' }}>Add to Cart</button>
                   </div>
                 </Card.Body>
               </Card>

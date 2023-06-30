@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import imageL from "../12.png";
-import image11 from "../11.png";
 import { Link } from 'react-router-dom';
 
 function NavigationBar() {
@@ -13,8 +12,8 @@ function NavigationBar() {
          <Navbar expand="lg "style={{ backgroundColor: '#e1997e' }}>
                 <Container fluid>
                     <Navbar.Brand href="#">
-                        <img src={image11} width="90px" height="60px" className="d-inline-block align-top mx-3" alt="logo" />
-                        <img src={imageL} width="60%" height="80" className="d-inline-block align-top mx-5" alt="Oraware logo" />
+                        {/* <img src={image11} width="90px" height="60px" className="d-inline-block align-top mx-3" alt="logo" /> */}
+                        <img src={imageL} width="70%" height="80" className="d-inline-block align-top mx-5" alt="Oraware logo" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
