@@ -1,0 +1,15 @@
+.image-container {
+    text-align: center;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Set your desired fixed height for the images */
+    object-fit: contain;
+  }
+  
+  .image-container p {
+    margin-top: 10px;
+  }
+  

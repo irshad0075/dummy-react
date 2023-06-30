@@ -2,8 +2,10 @@ import React from 'react'
 import Carouselstart from '../components/Carouselstart'
 import AboutSection from '../components/AboutSection'
 
-import CategorySection from '../components/CategorySection'
+// import CategorySection from '../components/CategorySection'
 import WhyUs from '../components/WhyUs'
+import OurAchievements from '../components/OurAchievements'
+
 import BestSellerSection from '../components/BestSellerSection'
 // import TopSale from '../components/TopSale'
 
@@ -18,11 +20,9 @@ function Home() {
       <AboutSection />
       <WhyUs />
       {/* <CategorySection /> */}
-      <BestSellerSection/>
-    
-      {/* <TopSale/> */}
-
-     
+      <BestSellerSection />
+  
+    <OurAchievements />
     
       {/* <Services /> */}
     </>

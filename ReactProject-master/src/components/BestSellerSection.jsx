@@ -45,20 +45,18 @@ const BestSellerSection = () => {
       .then((json) => setCategories(json.data));
   }, []);
 
-
-
   return (
     <div className="containers my-4">
       <div className="title">
         <p>Best Sale</p>
         <h2>
-          Top <span>Catagories</span>
+          Top <span>Categories</span>
         </h2>
       </div>
-      <div className="row">
+      <div className="d-flex">
         <div
-          className="col-md-5"
-          style={{ maxHeight: "600px", maxWidth: "400px", overflowY: "auto" }}
+          className="col-md-4"
+          style={{ maxHeight: "400px", maxWidth: "350px", overflowY: "auto" }}
         >
           {categories.map((val, key) => (
             <div className="col-md-9 my-2" key={key}>
@@ -66,7 +64,10 @@ const BestSellerSection = () => {
                 className="text-decoration-none"
                 to={`/products/category/${val}`}
               >
-                <Card className="h-100 text-dark" style={{ border: "2px solid #e1997e" }}>
+                <Card
+                  className="h-100 text-dark"
+                  style={{ border: "2px solid #e1997e" }}
+                >
                   <Card.Body>
                     <Card.Title>
                       {key + 1} - {val.toUpperCase().replace("-", " ")}
@@ -78,7 +79,7 @@ const BestSellerSection = () => {
           ))}
         </div>
 
-        <div className="col-md-4 my-4">
+        <div className="col-md-2 my-2">
           <div className="card" style={{ border: "2px solid #e1997e" }}>
             <div className="card-main">
               <div className="discount">-10%</div>
@@ -117,7 +118,85 @@ const BestSellerSection = () => {
           </div>
         </div>
 
-        <div className="col-md-4 my-4">
+        <div className="col-md-2 my-2">
+          <div className="card" style={{ border: "2px solid #e1997e" }}>
+            <div className="card-main">
+              <div className="discount">-20%</div>
+              <div className="product-container">
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image6, 2)}
+                >
+                  <img src={image6} alt="Product" />
+                </div>
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image4, 2)}
+                >
+                  <img src={image4} alt="Product" />
+                </div>
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image5, 2)}
+                >
+                  <img src={image5} alt="Product" />
+                </div>
+              </div>
+              <div className="image">
+                <img src={card1Image} alt="Product" />
+              </div>
+              <div className="cart-line"></div>
+            </div>
+            <div className="content">
+              <a>Top Brand</a>
+              <p>
+                <span className="money">$81.00</span>
+                <span className="price-old">$89.00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-2 my-2">
+          <div className="card" style={{ border: "2px solid #e1997e" }}>
+            <div className="card-main">
+              <div className="discount">-20%</div>
+              <div className="product-container">
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image6, 2)}
+                >
+                  <img src={image6} alt="Product" />
+                </div>
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image4, 2)}
+                >
+                  <img src={image4} alt="Product" />
+                </div>
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image5, 2)}
+                >
+                  <img src={image5} alt="Product" />
+                </div>
+              </div>
+              <div className="image">
+                <img src={card1Image} alt="Product" />
+              </div>
+              <div className="cart-line"></div>
+            </div>
+            <div className="content">
+              <a>Top Brand</a>
+              <p>
+                <span className="money">$81.00</span>
+                <span className="price-old">$89.00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-2 my-2">
           <div className="card" style={{ border: "2px solid #e1997e" }}>
             <div className="card-main">
               <div className="discount">-20%</div>
