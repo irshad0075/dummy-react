@@ -17,11 +17,17 @@ import image3 from "../m3.jpg";
 import image4 from "../m4.jpg";
 import image5 from "../m5.jpg";
 import image6 from "../m6.jpg";
+import image7 from "../m7.jpg";
+import image8 from "../m8.jpg";
+import image9 from "../m9.jpg";
+import image10 from "../m10.jpg";
 
 const BestSellerSection = () => {
   const [categories, setCategories] = useState([]);
   const [mainImage, setMainImage] = useState(image1);
   const [card1Image, setCard1Image] = useState(image4);
+  const [card2Image, setCard2Image] = useState(image7);
+  const [card3Image, setCard3Image] = useState(image10);
 
   const images = [
     imageslide1,
@@ -36,6 +42,10 @@ const BestSellerSection = () => {
       setMainImage(image);
     } else if (cardNumber === 2) {
       setCard1Image(image);
+    } else if (cardNumber === 3) {
+      setCard2Image(image);
+    } else if (cardNumber === 4) {
+      setCard3Image(image);
     }
   };
 
@@ -160,29 +170,29 @@ const BestSellerSection = () => {
         <div className="col-md-2 my-2">
           <div className="card" style={{ border: "2px solid #e1997e" }}>
             <div className="card-main">
-              <div className="discount">-20%</div>
+              <div className="discount">-30%</div>
               <div className="product-container">
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image6, 2)}
+                  onClick={() => handleThumbnailClick(image8, 3)}
                 >
-                  <img src={image6} alt="Product" />
+                  <img src={image8} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image4, 2)}
+                  onClick={() => handleThumbnailClick(image9, 3)}
                 >
-                  <img src={image4} alt="Product" />
+                  <img src={image9} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image5, 2)}
+                  onClick={() => handleThumbnailClick(image10, 3)}
                 >
-                  <img src={image5} alt="Product" />
+                  <img src={image10} alt="Product" />
                 </div>
               </div>
               <div className="image">
-                <img src={card1Image} alt="Product" />
+                <img src={card2Image} alt="Product" />
               </div>
               <div className="cart-line"></div>
             </div>
@@ -199,29 +209,29 @@ const BestSellerSection = () => {
         <div className="col-md-2 my-2">
           <div className="card" style={{ border: "2px solid #e1997e" }}>
             <div className="card-main">
-              <div className="discount">-20%</div>
+              <div className="discount">-40%</div>
               <div className="product-container">
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image6, 2)}
+                  onClick={() => handleThumbnailClick(image7, 4)}
                 >
-                  <img src={image6} alt="Product" />
+                  <img src={image7} alt="Product" />
                 </div>
                 <div
                   className="p"
-                  onClick={() => handleThumbnailClick(image4, 2)}
-                >
-                  <img src={image4} alt="Product" />
-                </div>
-                <div
-                  className="p"
-                  onClick={() => handleThumbnailClick(image5, 2)}
+                  onClick={() => handleThumbnailClick(image5, 4)}
                 >
                   <img src={image5} alt="Product" />
                 </div>
+                <div
+                  className="p"
+                  onClick={() => handleThumbnailClick(image6, 4)}
+                >
+                  <img src={image6} alt="Product" />
+                </div>
               </div>
               <div className="image">
-                <img src={card1Image} alt="Product" />
+                <img src={card3Image} alt="Product" />
               </div>
               <div className="cart-line"></div>
             </div>

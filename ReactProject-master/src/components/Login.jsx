@@ -1,74 +1,46 @@
-import React, { useState } from 'react';
-import '../styles/Login.css';
+import React from "react";
+import "../styles/Login.css";
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    if (name === 'email') {
-      setEmail(value);
-    } else if (name === 'password') {
-      setPassword(value);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validate form inputs
-    const validationErrors = {};
-    if (!email) {
-      validationErrors.email = 'Email is required';
-    }
-    if (!password) {
-      validationErrors.password = 'Password is required';
-    }
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    // Perform login logic
-    // ...
-  };
-
+export default function Login(props) {
   return (
-    <div className="login-container bg-dark">
-      <div className="login-form">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              className="input-field"
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={email}
-              onChange={handleInputChange}
-            />
-            {errors.email && <span className="error-message">{errors.email}</span>}
+    <div className="login-container">
+      <div className="img">
+        <img
+          src="https://i.pinimg.com/564x/15/64/27/15642738816ccde46e1057b127c7ac8f.jpg"
+          alt=""
+        />
+      </div>
+      <div className="form-container">
+        <form className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title" >Log In</h3>
+            <div className="form-group mt-3">
+              <label>Email address</label>
+              <input
+                type="email"
+                className="form-control mt-1"
+                placeholder="Enter email"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>Password</label>
+              <input
+                type="password"
+                className="form-control mt-1"
+                placeholder="Enter password"
+              />
+            </div>
+            <div className="d-grid gap-2 mt-3">
+              <button type="submit" className="btn " style={{ background: " #e1997e" }}>
+                Submit
+              </button>
+            </div>
+            <p className="forgot-password text-right mt-2">
+             Having no account <a href="#">SignUp</a>
+            </p>
           </div>
-          <div className="form-group">
-            <input
-              className="input-field"
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={handleInputChange}
-            />
-            {errors.password && <span className="error-message">{errors.password}</span>}
-          </div>
-          <button type="submit" className="login-button">Login</button>
         </form>
-        <div className="forgot-password">
-          <a href="#">Forgot password?</a>
-        </div>
       </div>
     </div>
   );
-};
-
-export default Login;
+}
