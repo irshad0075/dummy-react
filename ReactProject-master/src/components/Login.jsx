@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Login.css";
 import { Link } from "react-router-dom";
-import LoginImg from '../Login[1].svg';
+import LoginImg from "../Login[1].svg";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ export default function Login(props) {
   return (
     <div className="login-container">
       <div className="img">
-        <img src={LoginImg}/>
+        <img src={LoginImg} />
       </div>
       <div className="form-container">
         <form className="Auth-form" onSubmit={handleSubmit}>
@@ -56,7 +56,7 @@ export default function Login(props) {
               </button>
             </div>
             <p className="forgot-password text-right mt-2">
-              Having no account  <Link to="/SignUp">SignUp</Link>
+              Having no account <Link to="/SignUp">SignUp</Link>
             </p>
           </div>
         </form>

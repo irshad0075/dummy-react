@@ -34,8 +34,7 @@ function SignupDetail() {
     <>
       <div className="signup-container">
         <div className="signup-image">
-        <img src={signupImage} alt="Login" width="600" height="600" />
-
+          <img src={signupImage} alt="Login" width="600" height="600" />
         </div>
         <div className="signup-form">
           <Form onSubmit={handleSubmit}>

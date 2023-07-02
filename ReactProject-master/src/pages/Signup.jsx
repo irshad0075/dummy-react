@@ -1,11 +1,11 @@
-import React from 'react'
-import SignupDetail  from '../components/SignupDetail'
+import React from "react";
+import SignupDetail from "../components/SignupDetail";
 function Signup() {
   return (
     <>
-      <SignupDetail/>
-      </>
-  )
+      <SignupDetail />
+    </>
+  );
 }
 
-export default Signup
+export default Signup;
