@@ -7,6 +7,7 @@ import WhyUs from '../components/WhyUs'
 import OurAchievements from '../components/OurAchievements'
 
 import BestSellerSection from '../components/BestSellerSection'
+import News from '../components/News'
 // import TopSale from '../components/TopSale'
 
 
@@ -19,12 +20,9 @@ function Home() {
       <Carouselstart />
       <AboutSection />
       <WhyUs />
-      {/* <CategorySection /> */}
       <BestSellerSection />
-  
     <OurAchievements />
-    
-      {/* <Services /> */}
+    <News />
     </>
   )
 }

@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Form, Row, Col, Button } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+import signupImage from "../sign.png";
+
+import "../styles/SignupDetail.css";
 
 function SignupDetail() {
   const [formData, setFormData] = useState({
@@ -28,80 +32,38 @@ function SignupDetail() {
 
   return (
     <>
-      <style>
-        {`
-          body {
-            
-            background-color: #fff;
-          }
-          .signup-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-          }
-          .signup-image {
-            height: 500px;
-            width: 400px;
-            margin: 0 20px;
-          }
-          .signup-form {
-            width: 400px;
-          }
-          .signup-form .form-group label {
-            color: white;
-          }
-          .signup-form .btn {
-            background-color: #e1997e;
-            border-color: #e1997e;
-          }
-          .signup-form .btn:hover {
-            background-color: #d9886e;
-            border-color: #d9886e;
-          }
-          .signup-form .sign-up {
-            color: "#e1997e";
-            text-align: center;
-          }
-        `}
-      </style>
       <div className="signup-container">
         <div className="signup-image">
-          <img
-            src="https://i.pinimg.com/originals/27/9d/a0/279da0eddd5cf914d29ec923e837e3fe.gif"
-            alt="img"
-            style={{ height: "500px", width: "95%" }}
-          />
+        <img src={signupImage} alt="Login" width="600" height="600" />
+
         </div>
         <div className="signup-form">
           <Form onSubmit={handleSubmit}>
-            <Row className="mb-3">
-              <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="Enter email"
-                  value={email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                />
-              </Form.Group>
+            <Form.Group controlId="formGridEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+              />
+            </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) =>
-                    setFormData({ ...formData, password: e.target.value })
-                  }
-                />
-              </Form.Group>
-            </Row>
+            <Form.Group controlId="formGridPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) =>
+                  setFormData({ ...formData, password: e.target.value })
+                }
+              />
+            </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formGridAddress1">
+            <Form.Group controlId="formGridAddress1">
               <Form.Label>Address</Form.Label>
               <Form.Control
                 placeholder="1234 Main St"
@@ -112,7 +74,7 @@ function SignupDetail() {
               />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formGridAddress2">
+            <Form.Group controlId="formGridAddress2">
               <Form.Label>Address 2</Form.Label>
               <Form.Control
                 placeholder="Apartment, studio, or floor"
@@ -122,8 +84,7 @@ function SignupDetail() {
                 }
               />
             </Form.Group>
-
-            <Row className="mb-3">
+            <Row>
               <Form.Group as={Col} controlId="formGridCity">
                 <Form.Label>City</Form.Label>
                 <Form.Control
@@ -136,14 +97,15 @@ function SignupDetail() {
 
               <Form.Group as={Col} controlId="formGridState">
                 <Form.Label>State</Form.Label>
-                <Form.Select
+                <Form.Control
+                  as="select"
                   defaultValue="Choose..."
                   value={state}
                   onChange={(e) =>
                     setFormData({ ...formData, state: e.target.value })
                   }
                 >
-                  <option>Choose...</option>
+                  <option disabled>Choose...</option>
                   <option>California (United States)</option>
                   <option>New York (United States)</option>
                   <option>Texas (United States)</option>
@@ -151,7 +113,7 @@ function SignupDetail() {
                   <option>Paris (France)</option>
                   <option>Berlin (Germany)</option>
                   <option>Beijing (China)</option>
-                </Form.Select>
+                </Form.Control>
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridZip">
@@ -165,18 +127,19 @@ function SignupDetail() {
               </Form.Group>
             </Row>
 
-            <Form.Group className="mb-3" id="formGridCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
+            <div style={{ marginTop: "20px" }}>
+              <Form.Group controlId="formGridCheckbox">
+                <Form.Check type="checkbox" label="Check me out" />
+              </Form.Group>
+            </div>
 
-            <Button variant="danger" type="submit" >
+            <Button variant="primary" type="submit">
               Submit
             </Button>
           </Form>
 
-
           <p className="sign-up">
-            Already have an account? <a href="#">Login</a>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </div>
       </div>

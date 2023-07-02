@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-// import "../styles/about-section.css";
 import imageslide from "../about.png";
 
 const AboutSection = ({ AboutSec }) => {
@@ -9,10 +8,12 @@ const AboutSection = ({ AboutSec }) => {
       <Container>
         <Row>
           <Col lg="6" md="6">
-            <div className="about-section-content" style={{ color: "#e1997e" }}>
-              <h4 className="section-subtitle">About Us</h4>
+            <div className="about-section-content">
+              <h1 className="section-subtitle" style={{ color: "#e1997e" }}>
+                About Us
+              </h1>
               <h2 className="section-title">Welcome to Our Shopping Store</h2>
-              <p className="section-description">
+              <p className="section-description" style={{ color: "#e1997e" }}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Doloribus, ut vitae officia, nihil reprehenderit necessitatibus
                 ipsum consequuntur, ratione voluptatibus amet culpa? Ipsum
